@@ -16,16 +16,16 @@ public class Auto {
     	}
     	return cuenta;
     }
-   
-    String verificarIntegridad() { 
-    	for (Asiento seat : this.asientos) { 
-    		if (seat != null) { 
-    			if (Asiento.registro != this.motor.registro || Asiento.registro != this.registro) { 
-    				return "Las piezas no son originales"; } 
-    			} 
-    		} 
-    	return "Las piezas son originales";
-    	}
-    }
     
+    String verificarIntegridad() { 
+	   for (Asiento seat : this.asientos) { 
+		   if (seat != null) { 
+			  if (seat.registro != this.motor.registro || seat.registro != this.registro) { 
+				 return "Las piezas no son originales";
+				} 
+			} 
+		}
+	   return "Las piezas son originales";
+	}
+}
 
